@@ -1,0 +1,47 @@
+# --------------------------------------------------
+# VMware Virtual Machines
+# --------------------------------------------------
+
+# Ignore virtual machine contents
+VMware/**/*.vmdk
+VMware/**/*.vmsd
+VMware/**/*.vmem
+VMware/**/*.vmss
+VMware/**/*.nvram
+VMware/**/*.log
+VMware/**/*.scoreboard
+VMware/**/*.lck/
+VMware/**/*.vmxf
+
+# Ignore snapshots
+VMware/**/*.vmsn
+
+# Ignore suspend state
+VMware/**/*.vmss
+
+# Ignore memory files
+VMware/**/*.vmem
+
+# Ignore ISO files stored inside VMware (if any)
+VMware/**/*.iso
+
+# --------------------------------------------------
+# OS files
+# --------------------------------------------------
+
+.DS_Store
+Thumbs.db
+
+# --------------------------------------------------
+# Editor
+# --------------------------------------------------
+
+.vscode/
+.idea/
+
+# --------------------------------------------------
+# Python
+# --------------------------------------------------
+
+__pycache__/
+*.pyc
