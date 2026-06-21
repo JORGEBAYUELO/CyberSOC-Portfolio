@@ -1,0 +1,3 @@
+[submodule "Projects/CyberSOC-HomeLab-Foundation"]
+	path = Projects/CyberSOC-HomeLab-Foundation
+	url = git@github.com:JORGEBAYUELO/CyberSOC-HomeLab-Foundation.git
