@@ -152,3 +152,28 @@ Design the Active Directory organizational structure.
 
 Deploy the first Windows 11 Enterprise workstation, join it to the `cybersoc.lab` domain, and begin building the client environment for endpoint management, security monitoring, and attack simulation.
 
+## 2026-06-26
+
+### Phase 4 – Windows 11 Enterprise Client Deployment
+
+#### Objective
+
+Deploy the first Windows 11 Enterprise workstation that will be joined to the CyberSOC Active Directory domain.
+
+#### Accomplishments
+
+- Created the WIN11-CLIENT01 virtual machine in VMware Workstation.
+- Configured the VM with:
+  - UEFI firmware
+  - Secure Boot
+  - Virtual TPM
+  - VMnet2 private network
+- Installed Windows 11 Enterprise.
+- Completed the initial operating system setup.
+- Installed VMware Tools.
+- Verified proper display scaling and improved VM integration.
+- Captured a baseline screenshot after installation.
+
+#### Result
+
+The Windows 11 Enterprise client is successfully deployed and ready for domain integration.
