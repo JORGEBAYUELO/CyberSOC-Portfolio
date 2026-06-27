@@ -177,3 +177,47 @@ Deploy the first Windows 11 Enterprise workstation that will be joined to the Cy
 #### Result
 
 The Windows 11 Enterprise client is successfully deployed and ready for domain integration.
+
+### Phase 5 – Group Policy Foundation
+
+### Objective
+
+Establish the initial Group Policy infrastructure for domain joined workstations and verify successful policy application.
+
+### Tasks Completed
+
+* Moved **WIN11-CLIENT01** from the default **Computers** container into the **Workstations** Organizational Unit.
+* Created and linked the **Corporate Workstation Baseline** Group Policy Object to the **Workstations** OU.
+* Configured the initial Microsoft Defender Antivirus baseline settings within the GPO.
+* Forced a Group Policy update on **WIN11-CLIENT01** using:
+
+```
+gpupdate /force
+```
+
+* Verified successful Group Policy application using:
+
+```
+gpresult /r
+```
+
+### Validation
+
+Verified the following:
+
+* Corporate Workstation Baseline appears under **Applied Group Policy Objects**.
+* Default Domain Policy is successfully applied.
+* The client receives Group Policy from **CYBER-DC01.cybersoc.lab**.
+* The workstation is authenticated to the **CYBERSOC** domain.
+* Group Policy processing completed without errors.
+
+### Outcome
+
+The Active Directory environment now includes a centralized Group Policy management framework. Workstations receive security configurations through domain policies, providing the foundation for future hardening, logging, auditing, Sysmon deployment, Windows Event Forwarding, and SIEM integration.
+
+### Evidence
+
+Screenshot:
+
+* `07_Corporate_Workstation_Baseline_Applied.png`
+
