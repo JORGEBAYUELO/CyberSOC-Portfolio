@@ -180,11 +180,11 @@ The Windows 11 Enterprise client is successfully deployed and ready for domain i
 
 ### Phase 5 – Group Policy Foundation
 
-### Objective
+#### Objective
 
 Establish the initial Group Policy infrastructure for domain joined workstations and verify successful policy application.
 
-### Tasks Completed
+#### Tasks Completed
 
 * Moved **WIN11-CLIENT01** from the default **Computers** container into the **Workstations** Organizational Unit.
 * Created and linked the **Corporate Workstation Baseline** Group Policy Object to the **Workstations** OU.
@@ -201,7 +201,7 @@ gpupdate /force
 gpresult /r
 ```
 
-### Validation
+#### Validation
 
 Verified the following:
 
@@ -211,13 +211,31 @@ Verified the following:
 * The workstation is authenticated to the **CYBERSOC** domain.
 * Group Policy processing completed without errors.
 
-### Outcome
+#### Outcome
 
 The Active Directory environment now includes a centralized Group Policy management framework. Workstations receive security configurations through domain policies, providing the foundation for future hardening, logging, auditing, Sysmon deployment, Windows Event Forwarding, and SIEM integration.
 
-### Evidence
+#### Evidence
 
 Screenshot:
 
 * `07_Corporate_Workstation_Baseline_Applied.png`
 
+### Phase 6 – Endpoint Telemetry with Sysmon
+
+Completed the deployment of Microsoft Sysmon on WIN11-CLIENT01 to improve endpoint visibility beyond native Windows Security logs.
+
+#### Accomplishments:
+
+- Created the Sysmon tools directory on the Windows 11 client.
+- Downloaded and extracted the Sysinternals Sysmon package.
+- Downloaded the SwiftOnSecurity Sysmon configuration.
+- Installed Sysmon using the custom XML configuration.
+- Verified the Sysmon service and driver were successfully installed.
+- Generated process creation events by launching test applications.
+- Verified Event ID 1 (Process Creation) entries in the Sysmon Operational log.
+- Confirmed detailed telemetry including Process GUIDs, command lines, SHA256 hashes, integrity levels, parent processes, and user context.
+
+#### Outcome:
+
+The Windows 11 workstation is now producing enterprise-grade endpoint telemetry that will later be forwarded to the centralized logging infrastructure and SIEM.
