@@ -239,3 +239,35 @@ Completed the deployment of Microsoft Sysmon on WIN11-CLIENT01 to improve endpoi
 #### Outcome:
 
 The Windows 11 workstation is now producing enterprise-grade endpoint telemetry that will later be forwarded to the centralized logging infrastructure and SIEM.
+
+## 2026-06-28
+
+### Validate Windows Event Forwarding Infrastructure
+
+#### Objective
+
+Verify that Windows Event Forwarding (WEF) successfully forwards events from a domain-joined workstation to the Domain Controller.
+
+#### Tasks Completed
+
+- Modified the WEF subscription to collect System log events.
+- Restarted the Windows 11 client to generate test events.
+- Confirmed that forwarded events appeared in the Forwarded Events log on CYBER-DC01.
+- Verified the source computer was correctly identified as WIN11-CLIENT01.cybersoc.lab.
+- Confirmed successful communication between the Event Collector and the workstation.
+
+#### Key Findings
+
+- The Windows Event Forwarding infrastructure is fully operational.
+- WinRM, GPO configuration, Subscription Manager, and Event Collector services are functioning correctly.
+- The previous issue was isolated specifically to forwarding Security log events rather than the WEF infrastructure itself.
+
+#### Skills Demonstrated
+
+- Windows Event Forwarding (WEF)
+- Event Collector configuration
+- WinRM configuration
+- Group Policy management
+- Windows Event Viewer
+- Infrastructure validation
+- Enterprise troubleshooting methodology
