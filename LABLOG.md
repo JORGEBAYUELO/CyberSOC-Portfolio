@@ -271,3 +271,72 @@ Verify that Windows Event Forwarding (WEF) successfully forwards events from a d
 - Windows Event Viewer
 - Infrastructure validation
 - Enterprise troubleshooting methodology
+
+---
+
+## 2026-06-29
+
+### Phase 7 – Ubuntu Server Deployment and Wazuh Infrastructure Preparation
+
+**Status:** Completed
+
+#### Objective
+
+Deploy the Ubuntu Server that will host the centralized Wazuh platform and prepare the infrastructure for SIEM deployment.
+
+#### Tasks Completed
+
+* Created the `wazuh-server01` virtual machine in VMware Workstation.
+* Installed Ubuntu Server 26.04 LTS.
+* Configured the primary network interface (`ens33`) with the static IP address `192.168.100.30/24` on the VMnet2 internal network.
+* Added a secondary VMware NAT adapter (`ens36`) to provide controlled Internet access for operating system updates and future package installations.
+* Verified connectivity to the internal Active Directory environment.
+* Updated and upgraded the operating system to the latest available packages.
+* Installed and enabled the OpenSSH Server service.
+* Verified successful SSH connectivity from `WIN11-CLIENT01`.
+* Established the dual-NIC architecture that will support the Wazuh platform while keeping the Active Directory environment isolated from direct Internet access.
+
+#### Environment
+
+**Hostname**
+
+* `wazuh-server01`
+
+**Operating System**
+
+* Ubuntu Server 26.04 LTS
+
+**Network Interfaces**
+
+* `ens33` → `192.168.100.30/24` (VMnet2 Internal Network)
+* `ens36` → DHCP (VMware NAT)
+
+#### Key Design Decisions
+
+* Preserved VMnet2 as the dedicated internal network for all Active Directory communications.
+* Restricted Internet connectivity to the Ubuntu server through a secondary NAT interface.
+* Chose a dual-homed architecture to mirror common enterprise security appliance deployments.
+* Reserved the internal interface (`192.168.100.30`) for future Wazuh agent communications.
+
+#### Skills Demonstrated
+
+* Ubuntu Server administration
+* Linux networking
+* VMware virtual networking
+* Static IP configuration
+* Multi-homed server design
+* OpenSSH administration
+* Linux system maintenance
+* Enterprise infrastructure planning
+
+#### Evidence
+
+* Screenshot XXX – Ubuntu Server Installation
+* Screenshot XXX – Network Configuration
+* Screenshot XXX – Internet Connectivity Validation
+* Screenshot XXX – OpenSSH Service Status
+* Screenshot XXX – Successful SSH Connection from WIN11-CLIENT01
+
+#### Next
+
+Install and configure the Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard on `wazuh-server01`. Validate dashboard access, then begin enrolling Windows endpoints into the centralized SIEM platform.
