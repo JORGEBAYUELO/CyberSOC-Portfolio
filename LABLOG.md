@@ -340,3 +340,249 @@ Deploy the Ubuntu Server that will host the centralized Wazuh platform and prepa
 #### Next
 
 Install and configure the Wazuh Manager, Wazuh Indexer, and Wazuh Dashboard on `wazuh-server01`. Validate dashboard access, then begin enrolling Windows endpoints into the centralized SIEM platform.
+
+# Day 11 - Enterprise DNS Validation and Wazuh Access
+
+**Date:** July 3, 2026
+
+## Objective
+
+Complete enterprise DNS configuration for the CyberSOC lab by validating both forward and reverse name resolution between all infrastructure components before onboarding endpoints into Wazuh.
+
+---
+
+## Tasks Completed
+
+### DNS Infrastructure Validation
+
+Verified that the Active Directory DNS server correctly resolves all infrastructure systems using both short hostnames and fully qualified domain names (FQDNs).
+
+Forward DNS successfully resolves:
+
+- cyber-dc01 → 192.168.100.10
+- WIN11-CLIENT01 → 192.168.100.20
+- wazuh-server01 → 192.168.100.30
+
+---
+
+### Reverse Lookup Zone Configuration
+
+Created the Reverse Lookup Zone:
+
+```
+100.168.192.in-addr.arpa
+```
+
+Verified the following PTR records:
+
+| IP Address | Hostname |
+|------------|----------|
+| 192.168.100.10 | cyber-dc01.cybersoc.lab |
+| 192.168.100.20 | WIN11-CLIENT01.cybersoc.lab |
+| 192.168.100.30 | wazuh-server01.cybersoc.lab |
+
+Initially only one PTR record appeared in DNS Manager. After refreshing the DNS console, all PTR records became visible, confirming successful registration.
+
+---
+
+### DNS Troubleshooting
+
+Resolved several DNS-related issues during validation.
+
+#### Fixed "Server: Unknown"
+
+Initially `nslookup` reported:
+
+```
+Server: Unknown
+Address: 192.168.100.10
+```
+
+Investigation revealed:
+
+- Missing Reverse Lookup Zone
+- Missing PTR records
+- IPv6 loopback resolution causing inconsistent DNS identification
+
+After creating the Reverse Lookup Zone and validating the PTR records, `nslookup` correctly reports:
+
+```
+Server: cyber-dc01.cybersoc.lab
+Address: 192.168.100.10
+```
+
+---
+
+### Added Wazuh DNS Record
+
+Created an A record for:
+
+```
+wazuh-server01.cybersoc.lab
+```
+
+Address:
+
+```
+192.168.100.30
+```
+
+Validated from WIN11-CLIENT01:
+
+```
+nslookup wazuh-server01
+nslookup wazuh-server01.cybersoc.lab
+ping wazuh-server01
+ping wazuh-server01.cybersoc.lab
+```
+
+All tests completed successfully.
+
+---
+
+### Reverse DNS Validation
+
+Verified reverse resolution for every infrastructure node.
+
+```
+nslookup 192.168.100.10
+```
+
+Returns:
+
+```
+cyber-dc01.cybersoc.lab
+```
+
+```
+nslookup 192.168.100.20
+```
+
+Returns:
+
+```
+WIN11-CLIENT01.cybersoc.lab
+```
+
+```
+nslookup 192.168.100.30
+```
+
+Returns:
+
+```
+wazuh-server01.cybersoc.lab
+```
+
+All reverse lookups completed successfully.
+
+---
+
+### Wazuh Dashboard Validation
+
+Verified dashboard accessibility using both methods.
+
+Access by IP:
+
+```
+https://192.168.100.30
+```
+
+Access by DNS:
+
+```
+https://wazuh-server01.cybersoc.lab
+```
+
+Successfully authenticated to the dashboard using the administrative credentials generated during installation.
+
+---
+
+## Infrastructure Status
+
+Current lab topology:
+
+```
+                    cybersoc.lab
+
+          +------------------------------+
+          |                              |
+          |     cyber-dc01               |
+          |     192.168.100.10           |
+          |                              |
+          | Active Directory             |
+          | DNS                          |
+          | Kerberos                     |
+          +--------------+---------------+
+                         |
+                         |
+          -------------------------------
+                         |
+         +---------------+---------------+
+         |                               |
+         |                               |
++----------------------+     +-------------------------+
+| WIN11-CLIENT01       |     | wazuh-server01          |
+| 192.168.100.20       |     | 192.168.100.30          |
+| Windows 11           |     | Ubuntu Server 26.04 LTS|
+| Domain Joined        |     | Wazuh Manager           |
+|                      |     | Wazuh Dashboard         |
++----------------------+     | Wazuh Indexer           |
+                             +-------------------------+
+```
+
+---
+
+## Lessons Learned
+
+- Enterprise SIEM deployments rely heavily on a healthy DNS infrastructure.
+- Forward and reverse DNS should always be validated before deploying monitoring agents.
+- DNS Manager may require a manual refresh before displaying newly created PTR records.
+- A properly configured DNS server should identify itself during `nslookup` rather than displaying "Unknown."
+- Correct FQDN resolution simplifies future integrations between Active Directory, Wazuh, and additional infrastructure components.
+
+---
+
+## Current Project Status
+
+CyberSOC-HomeLab-Foundation
+
+Completed:
+
+- VMware isolated enterprise network
+- Windows Server 2022 Domain Controller
+- Active Directory Domain Services
+- DNS Server
+- Forward Lookup Zones
+- Reverse Lookup Zones
+- Windows 11 Enterprise client
+- Ubuntu Server 26.04 LTS
+- OpenSSH Server
+- Wazuh Manager
+- Wazuh Dashboard
+- Wazuh Indexer
+- Enterprise DNS validation
+- HTTPS dashboard access via FQDN
+
+Current Completion Estimate:
+
+95%
+
+---
+
+## Next Session
+
+Begin Phase 2 of the CyberSOC lab.
+
+### Endpoint Onboarding
+
+Objectives:
+
+- Install the Wazuh Agent on WIN11-CLIENT01
+- Register the endpoint with the Wazuh Manager
+- Validate agent communication
+- Verify telemetry ingestion
+- Generate Windows Security events
+- Observe detections within the Wazuh Dashboard
+
+This marks the transition from infrastructure deployment into SOC operations and detection engineering.
