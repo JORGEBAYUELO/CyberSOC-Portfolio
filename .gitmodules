@@ -1,3 +1,9 @@
 [submodule "Projects/CyberSOC-HomeLab-Foundation"]
 	path = Projects/CyberSOC-HomeLab-Foundation
 	url = git@github.com:JORGEBAYUELO/CyberSOC-HomeLab-Foundation.git
+[submodule "Projects/Projects/CyberSOC-AD-Attack-Detection"]
+	path = Projects/Projects/CyberSOC-AD-Attack-Detection
+	url = git@github.com:JORGEBAYUELO/CyberSOC-AD-Attack-Detection.git
+[submodule "Projects/CyberSOC-AD-Attack-Detection"]
+	path = Projects/CyberSOC-AD-Attack-Detection
+	url = git@github.com:JORGEBAYUELO/CyberSOC-AD-Attack-Detection.git
