@@ -1,11 +1,13 @@
 # CYBERSOC PORTFOLIO
 
+![HeroBanner](/images/CyberSoc-Banner.jpg)
+
 ## Current Progress
 
 | Project | Status | Repository |
 |---------|--------|------------|
-| HomeLab Foundation | 🟢 In Progress | ✔ |
-| Active Directory Attack & Detection | ⚪ Planned | ✔ |
+| HomeLab Foundation | 🟢 Completed | ✔ |
+| Active Directory Attack & Detection | ⚪ In Progress | ✔ |
 | Vulnerability Management | ⚪ Planned | ✔ |
 | SIEM | ⚪ Planned | ✔ |
 | Detection Engineering | ⚪ Planned | ✔ |
