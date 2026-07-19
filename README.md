@@ -17,7 +17,7 @@
 
 ## Lab Architecture
 
-(image)
+![Architectural-Diagram](/images/Foundational-Architectural-Diagram.jpg)
 
 ---
 
@@ -27,6 +27,7 @@
 - Windows Server 2022
 - Windows 11 Enterprise
 - Kali Linux
+- Wazuh
 - Splunk
 - Nessus
 - OpenVAS
