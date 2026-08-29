@@ -7,3 +7,6 @@
 [submodule "Projects/CyberSOC-AD-Attack-Detection"]
 	path = Projects/CyberSOC-AD-Attack-Detection
 	url = git@github.com:JORGEBAYUELO/CyberSOC-AD-Attack-Detection.git
+[submodule "Projects/CyberSOC-Vulnerability-Management"]
+	path = Projects/CyberSOC-Vulnerability-Management
+	url = git@github.com:JORGEBAYUELO/CyberSOC-Vulnerability-Management.git
