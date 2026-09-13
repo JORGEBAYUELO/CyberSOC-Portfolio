@@ -10,3 +10,6 @@
 [submodule "Projects/CyberSOC-Vulnerability-Management"]
 	path = Projects/CyberSOC-Vulnerability-Management
 	url = git@github.com:JORGEBAYUELO/CyberSOC-Vulnerability-Management.git
+[submodule "Projects/CyberSOC-SIEM"]
+	path = Projects/CyberSOC-SIEM
+	url = git@github.com:jorgebayuelo/CyberSOC-SIEM.git
