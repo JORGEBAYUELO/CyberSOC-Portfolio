@@ -4,9 +4,9 @@
 
 | Project | Status | Repository |
 |---------|--------|------------|
-| HomeLab Foundation | 🟢 Completed | ✔ |
-| Active Directory Attack & Detection | 🟢 Completed | ✔ |
-| Vulnerability Management | 🟢 Completed | ✔ |
+| [HomeLab Foundation](https://github.com/JORGEBAYUELO/CyberSOC-HomeLab-Foundation) | 🟢 Completed | ✔ |
+| [Active Directory Attack & Detection](https://github.com/JORGEBAYUELO/CyberSOC-AD-Attack-Detection) | 🟢 Completed | ✔ |
+| [Vulnerability Management](https://github.com/JORGEBAYUELO/CyberSOC-Vulnerability-Management) | 🟢 Completed | ✔ |
 | SIEM | ⚪ Planned | ✔ |
 | Detection Engineering | ⚪ Planned | ✔ |
 | Incident Response | ⚪ Planned | ✔ |
