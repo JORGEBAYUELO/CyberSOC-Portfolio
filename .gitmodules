@@ -13,3 +13,6 @@
 [submodule "Projects/CyberSOC-SIEM"]
 	path = Projects/CyberSOC-SIEM
 	url = git@github.com:jorgebayuelo/CyberSOC-SIEM.git
+[submodule "Projects/CyberSOC-Detection-Engineering"]
+	path = Projects/CyberSOC-Detection-Engineering
+	url = https://github.com/JORGEBAYUELO/CyberSOC-Detection-Engineering.git
