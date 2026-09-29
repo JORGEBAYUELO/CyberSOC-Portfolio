@@ -8,7 +8,7 @@
 | [Active Directory Attack & Detection](https://github.com/JORGEBAYUELO/CyberSOC-AD-Attack-Detection) | 🟢 Completed | ✔ |
 | [Vulnerability Management](https://github.com/JORGEBAYUELO/CyberSOC-Vulnerability-Management) | 🟢 Completed | ✔ |
 | [SIEM](https://github.com/JORGEBAYUELO/CyberSOC-SIEM) | 🟢 Completed | ✔ |
-| Detection Engineering | ⚪ In Progress | ✔ |
+| Detection Engineering | 🟢 Completed | ✔ |
 | Incident Response | ⚪ Planned | ✔ |
 
 ---
