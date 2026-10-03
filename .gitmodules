@@ -16,3 +16,6 @@
 [submodule "Projects/CyberSOC-Detection-Engineering"]
 	path = Projects/CyberSOC-Detection-Engineering
 	url = https://github.com/JORGEBAYUELO/CyberSOC-Detection-Engineering.git
+[submodule "Projects/CyberSOC-Incident-Response"]
+	path = Projects/CyberSOC-Incident-Response
+	url = git@github.com:JORGEBAYUELO/CyberSOC-Incident-Response.git
