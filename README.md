@@ -9,7 +9,7 @@
 | [Vulnerability Management](https://github.com/JORGEBAYUELO/CyberSOC-Vulnerability-Management) | 🟢 Completed | ✔ |
 | [SIEM](https://github.com/JORGEBAYUELO/CyberSOC-SIEM) | 🟢 Completed | ✔ |
 | [Detection Engineering](https://github.com/JORGEBAYUELO/CyberSOC-Detection-Engineering) | 🟢 Completed | ✔ |
-| Incident Response | ⚪ Planned | ✔ |
+| [Incident Response](https://github.com/JORGEBAYUELO/CyberSOC-Incident-Response) | 🟢 Completed | ✔ |
 
 ---
 
